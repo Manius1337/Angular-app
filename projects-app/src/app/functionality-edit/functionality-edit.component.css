@@ -1,0 +1,32 @@
+.text-center{
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size:xx-large;
+    margin-top: 30px;
+}
+
+.button{
+    padding: 10px;
+    font-weight: bold;
+    font-family:'Times New Roman', Times, serif;
+    margin-bottom: 30px;
+    border-radius: 40px;
+}
+
+.button:hover {
+    background-color: #000;
+    color: #fff; 
+  }
+
+  .buttonC{
+    margin-left: 35px;
+    width:fit-content ;
+}
+
+.table{
+    width: fit-content;
+    margin: 30px auto;
+    height: fit-content;
+}
+

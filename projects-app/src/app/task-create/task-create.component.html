@@ -1,0 +1,45 @@
+<div class="table">
+<form [formGroup]="taskForm" (ngSubmit)="createTask()">
+  <div>
+    <mat-form-field>
+      <mat-label>Nazwa</mat-label>
+      <input matInput formControlName="name" required />
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>Zadanie</mat-label>
+      <mat-select formControlName="functionality" required>
+        <mat-option *ngFor="let func of functionalityOptions" [value]="func">{{
+          func.name
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>Status</mat-label>
+      <mat-select formControlName="kanban" required>
+        <mat-option *ngFor="let kanban of enumValues" [value]="kanban">{{
+          kanban
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>Przypisany użytkownik</mat-label>
+      <mat-select formControlName="assignedUser">
+        <mat-option></mat-option>
+        <mat-option *ngFor="let user of ownerOptions" [value]="user">{{
+          user
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="text-center">
+    <button mat-raised-button color="primary" type="submit">Dodaj pod zadanie</button>
+    </div>
+  </form>
+</div>
+  

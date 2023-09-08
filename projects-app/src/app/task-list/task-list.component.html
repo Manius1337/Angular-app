@@ -1,0 +1,85 @@
+<h2 class="text-center">Szczegóły zadania:  {{ functionality.name }}</h2>
+
+<div class="table">
+<table mat-table [dataSource]="functionalities" class="mat-elevation-z8">
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Nazwa</th>
+    <td mat-cell *matCellDef="let functionality">{{ functionality.name }}</td>
+  </ng-container>
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef>Opis</th>
+    <td mat-cell *matCellDef="let functionality">
+      {{ functionality.description }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="project">
+    <th mat-header-cell *matHeaderCellDef>Projekt</th>
+    <td mat-cell *matCellDef="let functionality">
+      {{ functionality.project.name }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="user">
+    <th mat-header-cell *matHeaderCellDef>Właściciel</th>
+    <td mat-cell *matCellDef="let functionality">
+      {{ workingUsers }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="kanban">
+    <th mat-header-cell *matHeaderCellDef>Status</th>
+    <td mat-cell *matCellDef="let functionality">{{ functionality.kanban }}</td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let functionality; columns: displayedColumns"></tr>
+</table>
+</div>
+
+
+<h3 class="text-center">Lista pod zadań</h3>
+<div class="buttonC">
+<button mat-raised-button class="button" (click)="createTask()">
+  Utwórz Nowe pod zadanie
+</button>
+</div>
+
+<div class="table">
+<table mat-table [dataSource]="tasksBelongsToFunctionality" class="mat-elevation-z8">
+  <ng-container matColumnDef="taskName">
+    <th mat-header-cell *matHeaderCellDef>Nazwa</th>
+    <td mat-cell *matCellDef="let task">{{ task.name }}</td>
+  </ng-container>
+  <ng-container matColumnDef="taskKanban">
+    <th mat-header-cell *matHeaderCellDef>Status</th>
+    <td mat-cell *matCellDef="let task">{{ task.kanban }}</td>
+  </ng-container>
+  <ng-container matColumnDef="taskAssignedUser">
+    <th mat-header-cell *matHeaderCellDef>Użytkownik</th>
+    <td mat-cell *matCellDef="let task">{{ task.assignedUser }}</td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="taskActions">
+    <th mat-header-cell *matHeaderCellDef>Akcje</th>
+    <td mat-cell *matCellDef="let task">
+      <!-- Przyciski akcji -->
+
+      <button mat-icon-button (click)="editTask(task)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="deleteTask(task)">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button mat-icon-button (click)="viewTaskDetails(task)">
+        <mat-icon>info</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+  
+  <tr mat-header-row *matHeaderRowDef="taskDisplayedColumns"></tr>
+  <tr mat-row *matRowDef="let functionality; columns: taskDisplayedColumns"></tr>
+</table>
+
+</div>
+
+

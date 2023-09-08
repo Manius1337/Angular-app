@@ -1,0 +1,27 @@
+.text-center{
+    text-align: center;
+    font-family:cursive;
+    font-weight: bold;
+    font-size:xx-large;
+   
+}
+
+.button{
+    padding: 10px;
+    font-weight: bold;
+    font-family:'Times New Roman', Times, serif;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    border-radius: 40px;
+ }
+
+.buttonC{
+    margin: 0 auto;
+    width:fit-content ;
+}
+
+.table{
+    width: fit-content;
+    margin: 30px auto;
+    height: fit-content;
+}

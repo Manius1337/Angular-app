@@ -1,0 +1,28 @@
+.text-center{
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size:xx-large;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.button{
+   padding: 20px;
+   font-weight: bold;
+   font-family:cursive;
+   margin-bottom: 20px;
+   border-radius: 20px;
+   background-color:  rgba(66, 150, 156, 0.7);
+}
+
+.buttonC{
+    margin: 0 auto;
+    width:fit-content ;
+}
+
+.table{
+    width: 95%;
+    margin: 0 auto;
+    height: fit-content;
+}

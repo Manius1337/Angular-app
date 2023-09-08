@@ -1,0 +1,46 @@
+<div class="table">
+  <form [formGroup]="functionalityForm" (ngSubmit)="createFunctionality()">
+    <div>
+      <mat-form-field>
+        <input matInput formControlName="name" placeholder="Nazwa zadania" required />
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field>
+        <textarea matInput formControlName="description" placeholder="Opis zadania" required></textarea>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field>
+        <mat-label>Wybierz projekt</mat-label>
+        <mat-select formControlName="projectName">
+          <mat-option *ngFor="let value of projectValues" [value]="value">{{ value }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field>
+        <mat-label>Przypisz właściciela</mat-label>
+        <mat-select formControlName="owner">
+          <mat-option *ngFor="let value of userValues" [value]="value">{{ value }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field>
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="kanban">
+          <mat-option *ngFor="let value of enumValues" [value]="value">{{ value }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="text-center">
+      <button mat-raised-button color="primary" type="submit">Utwórz zadanie</button>
+    </div>
+  </form>
+</div>

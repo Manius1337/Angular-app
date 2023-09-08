@@ -1,0 +1,35 @@
+<h2 class="text-center">Edytuj pod zadanie: {{ task.name }}</h2>
+
+<div class="table">
+<form (ngSubmit)="onSubmit()" [formGroup]="editForm">
+  <div>
+  <mat-form-field>
+    <input
+      matInput
+      formControlName="name"
+      placeholder="Nazwa"
+      required
+    />
+  </mat-form-field>
+</div>
+<div>
+  <mat-form-field>
+    <mat-label>Status</mat-label>
+    <mat-select formControlName="kanban">
+      <mat-option *ngFor="let value of enumValues" [value]="value">
+        {{ value }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div class="text-center">
+  <button
+    mat-raised-button
+    class="button"
+    type="submit"
+  >
+    Zapisz
+  </button>
+</div>
+</form>
+</div>

@@ -1,0 +1,31 @@
+<h2 class="text-center">Szczegóły zadania: {{ task.name }}</h2>
+
+<div class="table">
+<table mat-table [dataSource]="tasks" class="mat-elevation-z8">
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Nazwa</th>
+    <td mat-cell *matCellDef="let task">{{ task.name }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="functionality">
+    <th mat-header-cell *matHeaderCellDef>Funkcjonalność</th>
+    <td mat-cell *matCellDef="let task">{{ task.functionality.name }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="kanban">
+    <th mat-header-cell *matHeaderCellDef>Status</th>
+    <td mat-cell *matCellDef="let task" >
+      {{ task.kanban }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="assignedUser">
+    <th mat-header-cell *matHeaderCellDef>Przypisany użytkownik</th>
+    <td mat-cell *matCellDef="let task">{{ task.assignedUser }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let task; columns: displayedColumns"></tr>
+</table>
+</div>
+
+
